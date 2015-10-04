@@ -27,6 +27,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.MainActivity" />
         </activity>
+        <activity
+            android:name=".ui.NavigationDrawerActivity"
+            android:label="@string/title_activity_navigation_drawer"
+            android:parentActivityName=".ui.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sunnysydeup.awesomeproject.ui.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

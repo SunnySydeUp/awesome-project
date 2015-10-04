@@ -31,10 +31,22 @@ public class MainActivityFragment extends Fragment {
                 navigateToPermissions();
             }
         });
+        Button buttonNavigationDrawer = (Button) view.findViewById(R.id.button_navigation_drawer);
+        buttonNavigationDrawer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigateToNavigationDrawer();
+            }
+        });
     }
 
     private void navigateToPermissions() {
         Intent intent = new Intent(getActivity(), PermissionsActivity.class);
+        startActivity(intent);
+    }
+
+    private void navigateToNavigationDrawer() {
+        Intent intent = new Intent(getActivity(), NavigationDrawerActivity.class);
         startActivity(intent);
     }
 }
