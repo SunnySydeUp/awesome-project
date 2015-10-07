@@ -1,4 +1,5 @@
-<FrameLayout
+<android.support.v7.widget.RecyclerView
+    android:id="@+id/recycler_view"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,30 +10,4 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".MainActivityFragment">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/button_permissions"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/permissions"/>
-
-        <Button
-            android:id="@+id/button_navigation_drawer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/navigation_drawer"/>
-
-        <Button
-            android:id="@+id/button_widgets"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/widgets"/>
-    </LinearLayout>
-
-</FrameLayout>
+</android.support.v7.widget.RecyclerView>

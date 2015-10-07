@@ -39,8 +39,7 @@
         <activity
             android:name=".ui.WidgetsActivity"
             android:label="@string/title_activity_widgets"
-            android:parentActivityName=".ui.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:parentActivityName=".ui.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.sunnysydeup.awesomeproject.ui.MainActivity" />
