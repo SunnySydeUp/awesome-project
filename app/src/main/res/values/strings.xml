@@ -5,7 +5,11 @@
     <string name="navigation_drawer">Navigation Drawer</string>
     <string name="title_activity_permissions">PermissionsActivity</string>
     <string name="title_activity_navigation_drawer">NavigationDrawerActivity</string>
-
+    <string name="title_activity_widgets">WidgetsActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="widgets">Widgets</string>
+    <string name="test_label">This is a test label</string>
+    <string name="set_error">Set Error</string>
+    <string name="clear_error">Clear Error</string>
 </resources>

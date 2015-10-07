@@ -27,6 +27,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/navigation_drawer"/>
+
+        <Button
+            android:id="@+id/button_widgets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/widgets"/>
     </LinearLayout>
 
 </FrameLayout>

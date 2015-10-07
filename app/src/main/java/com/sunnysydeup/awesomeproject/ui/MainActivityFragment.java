@@ -38,6 +38,18 @@ public class MainActivityFragment extends Fragment {
                 navigateToNavigationDrawer();
             }
         });
+        Button buttonWidgets = (Button) view.findViewById(R.id.button_widgets);
+        buttonWidgets.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigateToWidgets();
+            }
+        });
+    }
+
+    private void navigateToWidgets() {
+        Intent intent = new Intent(getActivity(), WidgetsActivity.class);
+        startActivity(intent);
     }
 
     private void navigateToPermissions() {
