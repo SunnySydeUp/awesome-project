@@ -12,4 +12,6 @@
     <string name="test_label">This is a test label</string>
     <string name="set_error">Set Error</string>
     <string name="clear_error">Clear Error</string>
+    <string name="title_activity_tab">TabActivity</string>
+    <string name="tab_number">Tab %1$d</string>
 </resources>

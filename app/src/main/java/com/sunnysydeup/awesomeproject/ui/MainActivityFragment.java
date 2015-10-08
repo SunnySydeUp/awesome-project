@@ -75,6 +75,11 @@ public class MainActivityFragment extends Fragment {
         }).show();
     }
 
+    private void showTabs() {
+        Intent intent = new Intent(getActivity(), TabActivity.class);
+        startActivity(intent);
+    }
+
     public class NavigationAdapter extends RecyclerView.Adapter<NavigationAdapter.ViewHolder> {
         private List<String> items;
 
@@ -93,6 +98,9 @@ public class MainActivityFragment extends Fragment {
         public void onBindViewHolder(NavigationAdapter.ViewHolder holder, final int position) {
             String item = items.get(position);
             holder.title.setText(item);
+            NavigationPaletteItem paletteItem = NavigationPalette.getInstance(getActivity()).generate();
+            holder.container.setCardBackgroundColor(getColor(getActivity(), paletteItem.backgroundColour));
+            holder.title.setTextColor(getColor(getActivity(), paletteItem.textColour));
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -112,12 +120,12 @@ public class MainActivityFragment extends Fragment {
                         case 4:
                             showSnackBarWithAction();
                             break;
+                        case 5:
+                            showTabs();
+                            break;
                     }
                 }
             });
-            NavigationPaletteItem paletteItem = NavigationPalette.getInstance(getActivity()).generate();
-            holder.container.setCardBackgroundColor(getColor(getActivity(), paletteItem.backgroundColour));
-            holder.title.setTextColor(getColor(getActivity(), paletteItem.textColour));
         }
 
         @Override

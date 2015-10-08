@@ -6,5 +6,6 @@
         <item>Widgets</item>
         <item>Snackbar</item>
         <item>Snackbar With Action</item>
+        <item>Tabs</item>
     </string-array>
 </resources>
