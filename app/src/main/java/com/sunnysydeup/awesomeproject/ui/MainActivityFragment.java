@@ -99,7 +99,7 @@ public class MainActivityFragment extends Fragment {
             String item = items.get(position);
             holder.title.setText(item);
             NavigationPaletteItem paletteItem = NavigationPalette.getInstance(getActivity()).generate();
-            holder.container.setCardBackgroundColor(getColor(getActivity(), paletteItem.backgroundColour));
+            ((CardView) holder.itemView).setCardBackgroundColor(getColor(getActivity(), paletteItem.backgroundColour));
             holder.title.setTextColor(getColor(getActivity(), paletteItem.textColour));
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -134,12 +134,10 @@ public class MainActivityFragment extends Fragment {
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
-            CardView container;
             TextView title;
 
             public ViewHolder(View itemView) {
                 super(itemView);
-                container = (CardView) itemView.findViewById(R.id.container);
                 title = (TextView) itemView.findViewById(R.id.title);
             }
         }
