@@ -7,5 +7,6 @@
         <item>Snackbar</item>
         <item>Snackbar With Action</item>
         <item>Tabs</item>
+        <item>Scrolling Activity</item>
     </string-array>
 </resources>

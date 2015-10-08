@@ -62,6 +62,11 @@ public class MainActivityFragment extends Fragment {
         return Arrays.asList(getResources().getStringArray(R.array.menu_items));
     }
 
+    private void showScrolling() {
+        Intent intent = new Intent(getActivity(), ScrollingActivity.class);
+        startActivity(intent);
+    }
+
     private void showSnackBar() {
         Snackbar.make(getView(), "Test Snackbar", Snackbar.LENGTH_SHORT).show();
     }
@@ -122,6 +127,9 @@ public class MainActivityFragment extends Fragment {
                             break;
                         case 5:
                             showTabs();
+                            break;
+                        case 6:
+                            showScrolling();
                             break;
                     }
                 }
