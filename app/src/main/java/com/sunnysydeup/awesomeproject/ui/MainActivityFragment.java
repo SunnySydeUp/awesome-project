@@ -2,6 +2,7 @@ package com.sunnysydeup.awesomeproject.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sunnysydeup.awesomeproject.R;
 import com.sunnysydeup.awesomeproject.models.NavigationPalette;
@@ -60,6 +62,19 @@ public class MainActivityFragment extends Fragment {
         return Arrays.asList(getResources().getStringArray(R.array.menu_items));
     }
 
+    private void showSnackBar() {
+        Snackbar.make(getView(), "Test Snackbar", Snackbar.LENGTH_SHORT).show();
+    }
+
+    private void showSnackBarWithAction() {
+        Snackbar.make(getView(), "Snackbar with Action", Snackbar.LENGTH_SHORT).setAction("Action", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Snack pressed", Toast.LENGTH_SHORT).show();
+            }
+        }).show();
+    }
+
     public class NavigationAdapter extends RecyclerView.Adapter<NavigationAdapter.ViewHolder> {
         private List<String> items;
 
@@ -90,6 +105,12 @@ public class MainActivityFragment extends Fragment {
                             break;
                         case 2:
                             navigateToWidgets();
+                            break;
+                        case 3:
+                            showSnackBar();
+                            break;
+                        case 4:
+                            showSnackBarWithAction();
                             break;
                     }
                 }

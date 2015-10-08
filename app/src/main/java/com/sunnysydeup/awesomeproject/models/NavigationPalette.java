@@ -22,7 +22,7 @@ public class NavigationPalette {
     private void generatePalette(Context context) {
         if (palettes == null) {
             palettes = new ArrayList<>();
-            palettes.add(new NavigationPaletteItem(R.color.palette_red, R.color.primary_text));
+            palettes.add(new NavigationPaletteItem(R.color.palette_red, android.R.color.white));
             palettes.add(new NavigationPaletteItem(R.color.palette_blue, android.R.color.white));
             palettes.add(new NavigationPaletteItem(R.color.palette_green, R.color.primary_text));
             palettes.add(new NavigationPaletteItem(R.color.primary, R.color.primary_text));

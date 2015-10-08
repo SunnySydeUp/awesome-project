@@ -4,5 +4,7 @@
         <item>Permissions</item>
         <item>Navigation Drawer</item>
         <item>Widgets</item>
+        <item>Snackbar</item>
+        <item>Snackbar With Action</item>
     </string-array>
 </resources>
