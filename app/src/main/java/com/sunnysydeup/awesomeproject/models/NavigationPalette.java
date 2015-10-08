@@ -25,7 +25,7 @@ public class NavigationPalette {
             palettes.add(new NavigationPaletteItem(R.color.palette_red, android.R.color.white));
             palettes.add(new NavigationPaletteItem(R.color.palette_blue, android.R.color.white));
             palettes.add(new NavigationPaletteItem(R.color.palette_green, R.color.primary_text));
-            palettes.add(new NavigationPaletteItem(R.color.primary, R.color.primary_text));
+            palettes.add(new NavigationPaletteItem(R.color.primary, android.R.color.white));
             palettes.add(new NavigationPaletteItem(R.color.accent, R.color.primary_text));
         }
     }
