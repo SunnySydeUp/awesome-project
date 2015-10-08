@@ -3,6 +3,7 @@ package com.sunnysydeup.awesomeproject.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
@@ -11,9 +12,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.sunnysydeup.awesomeproject.R;
+import com.sunnysydeup.awesomeproject.models.NavigationPalette;
+import com.sunnysydeup.awesomeproject.models.NavigationPaletteItem;
 
 import java.util.Arrays;
 import java.util.List;
+
+import static android.support.v4.content.ContextCompat.getColor;
 
 public class MainActivityFragment extends Fragment {
 
@@ -89,6 +94,9 @@ public class MainActivityFragment extends Fragment {
                     }
                 }
             });
+            NavigationPaletteItem paletteItem = NavigationPalette.getInstance(getActivity()).generate();
+            holder.container.setCardBackgroundColor(getColor(getActivity(), paletteItem.backgroundColour));
+            holder.title.setTextColor(getColor(getActivity(), paletteItem.textColour));
         }
 
         @Override
@@ -97,12 +105,12 @@ public class MainActivityFragment extends Fragment {
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
-            View container;
+            CardView container;
             TextView title;
 
             public ViewHolder(View itemView) {
                 super(itemView);
-                container = itemView.findViewById(R.id.container);
+                container = (CardView) itemView.findViewById(R.id.container);
                 title = (TextView) itemView.findViewById(R.id.title);
             }
         }
