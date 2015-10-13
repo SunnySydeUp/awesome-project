@@ -131,6 +131,8 @@ public class MainActivityFragment extends Fragment {
                         case 6:
                             showScrolling();
                             break;
+                        case 7:
+                            navigateToMVP();
                     }
                 }
             });
@@ -149,5 +151,10 @@ public class MainActivityFragment extends Fragment {
                 title = (TextView) itemView.findViewById(R.id.title);
             }
         }
+    }
+
+    private void navigateToMVP() {
+        Intent intent = new Intent(getActivity(), MVPActivity.class);
+        startActivity(intent);
     }
 }

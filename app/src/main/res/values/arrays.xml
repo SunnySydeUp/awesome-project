@@ -8,5 +8,6 @@
         <item>Snackbar With Action</item>
         <item>Tabs</item>
         <item>Scrolling Activity</item>
+        <item>MVP and RXJava</item>
     </string-array>
 </resources>
