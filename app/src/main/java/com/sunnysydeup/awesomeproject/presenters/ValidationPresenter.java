@@ -1,9 +1,8 @@
 package com.sunnysydeup.awesomeproject.presenters;
 
-public interface ValidationPresenter {
-    void validate();
+import android.widget.EditText;
 
-    interface Callback {
-        void validationSucceeded();
-    }
+public interface ValidationPresenter {
+    void setupValidationObservers(EditText name, EditText email);
+    void validate();
 }
