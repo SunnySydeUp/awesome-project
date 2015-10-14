@@ -12,7 +12,6 @@ import android.widget.EditText;
 
 import com.sunnysydeup.awesomeproject.R;
 import com.sunnysydeup.awesomeproject.presenters.ValidationPresenter;
-import com.sunnysydeup.awesomeproject.presenters.ValidationPresenterImpl;
 import com.sunnysydeup.awesomeproject.views.ValidationView;
 
 /**
@@ -57,7 +56,7 @@ public class MVPActivityFragment extends Fragment implements ValidationView {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        presenter = new ValidationPresenterImpl(this);
+        presenter = new ValidationPresenter(this);
     }
 
     @Override
