@@ -107,4 +107,6 @@
     <string name="title_activity_mvp">MVPActivity</string>
     <string name="name">Name</string>
     <string name="email">Email</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="search">search</string>
 </resources>

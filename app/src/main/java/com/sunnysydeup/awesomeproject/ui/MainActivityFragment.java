@@ -27,6 +27,11 @@ public class MainActivityFragment extends Fragment {
     public MainActivityFragment() {
     }
 
+    private void navigateToMVP() {
+        Intent intent = new Intent(getActivity(), MVPActivity.class);
+        startActivity(intent);
+    }
+
     private void navigateToNavigationDrawer() {
         Intent intent = new Intent(getActivity(), NavigationDrawerActivity.class);
         startActivity(intent);
@@ -34,6 +39,11 @@ public class MainActivityFragment extends Fragment {
 
     private void navigateToPermissions() {
         Intent intent = new Intent(getActivity(), PermissionsActivity.class);
+        startActivity(intent);
+    }
+
+    private void navigateToSearch() {
+        Intent intent = new Intent(getActivity(), SearchActivity.class);
         startActivity(intent);
     }
 
@@ -133,6 +143,10 @@ public class MainActivityFragment extends Fragment {
                             break;
                         case 7:
                             navigateToMVP();
+                            break;
+                        case 8:
+                            navigateToSearch();
+                            break;
                     }
                 }
             });
@@ -151,10 +165,5 @@ public class MainActivityFragment extends Fragment {
                 title = (TextView) itemView.findViewById(R.id.title);
             }
         }
-    }
-
-    private void navigateToMVP() {
-        Intent intent = new Intent(getActivity(), MVPActivity.class);
-        startActivity(intent);
     }
 }

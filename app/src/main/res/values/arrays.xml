@@ -9,5 +9,6 @@
         <item>Tabs</item>
         <item>Scrolling Activity</item>
         <item>MVP and RXJava</item>
+        <item>Search</item>
     </string-array>
 </resources>
