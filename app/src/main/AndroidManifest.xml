@@ -74,19 +74,28 @@
         <activity
             android:name=".ui.SearchActivity"
             android:label="@string/title_activity_search"
+            android:launchMode="singleTop"
             android:parentActivityName=".ui.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:launchMode="singleTop">
+            android:theme="@style/AppTheme.NoActionBar" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.sunnysydeup.awesomeproject.ui.MainActivity" />
             <meta-data
                 android:name="android.app.searchable"
-                android:resource="@xml/searchable"/>
+                android:resource="@xml/searchable" />
+
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
-
+        </activity>
+        <activity
+            android:name=".ui.AnimationActivity"
+            android:label="@string/title_activity_animation"
+            android:parentActivityName=".ui.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sunnysydeup.awesomeproject.ui.MainActivity" />
         </activity>
     </application>
 

@@ -27,6 +27,11 @@ public class MainActivityFragment extends Fragment {
     public MainActivityFragment() {
     }
 
+    private void navigateToAnimation() {
+        Intent intent = new Intent(getActivity(), AnimationActivity.class);
+        startActivity(intent);
+    }
+
     private void navigateToMVP() {
         Intent intent = new Intent(getActivity(), MVPActivity.class);
         startActivity(intent);
@@ -146,6 +151,9 @@ public class MainActivityFragment extends Fragment {
                             break;
                         case 8:
                             navigateToSearch();
+                            break;
+                        case 9:
+                            navigateToAnimation();
                             break;
                     }
                 }
