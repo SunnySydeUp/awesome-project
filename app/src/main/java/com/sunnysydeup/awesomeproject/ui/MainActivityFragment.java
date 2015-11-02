@@ -27,6 +27,11 @@ public class MainActivityFragment extends Fragment {
     public MainActivityFragment() {
     }
 
+    private void navigateToAndroidLibrary() {
+        Intent intent = new Intent(getActivity(), ExternalViewActivity.class);
+        startActivity(intent);
+    }
+
     private void navigateToAnimation() {
         Intent intent = new Intent(getActivity(), AnimationActivity.class);
         startActivity(intent);
@@ -155,6 +160,8 @@ public class MainActivityFragment extends Fragment {
                         case 9:
                             navigateToAnimation();
                             break;
+                        case 10:
+                            navigateToAndroidLibrary();
                     }
                 }
             });
