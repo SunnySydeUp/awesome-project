@@ -6,8 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import rx.Observable;
+import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.functions.Func1;
+import rx.schedulers.Schedulers;
 
 public class SearchPresenter {
     private ArrayList<String> list;
@@ -30,6 +32,8 @@ public class SearchPresenter {
 
     public void handleSearch(final String query) {
         Observable.from(list)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
                 .filter(new Func1<String, Boolean>() {
                     @Override
                     public Boolean call(String s) {

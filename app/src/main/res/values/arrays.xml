@@ -12,5 +12,6 @@
         <item>Search</item>
         <item>Animation</item>
         <item>Android Library</item>
+        <item>Dagger 2</item>
     </string-array>
 </resources>

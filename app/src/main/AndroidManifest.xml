@@ -106,6 +106,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.sunnysydeup.awesomeproject.ui.MainActivity" />
         </activity>
+        <activity
+            android:name=".ui.Dagger2Activity"
+            android:label="@string/title_activity_dagger2"
+            android:parentActivityName=".ui.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sunnysydeup.awesomeproject.ui.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

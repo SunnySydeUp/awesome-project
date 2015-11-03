@@ -111,4 +111,5 @@
     <string name="search">search</string>
     <string name="title_activity_animation">AnimationActivity</string>
     <string name="title_activity_external_view">ExternalViewActivity</string>
+    <string name="title_activity_dagger2">Dagger2Activity</string>
 </resources>

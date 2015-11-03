@@ -37,6 +37,11 @@ public class MainActivityFragment extends Fragment {
         startActivity(intent);
     }
 
+    private void navigateToDagger2() {
+        Intent intent = new Intent(getActivity(), Dagger2Activity.class);
+        startActivity(intent);
+    }
+
     private void navigateToMVP() {
         Intent intent = new Intent(getActivity(), MVPActivity.class);
         startActivity(intent);
@@ -162,6 +167,8 @@ public class MainActivityFragment extends Fragment {
                             break;
                         case 10:
                             navigateToAndroidLibrary();
+                        case 11:
+                            navigateToDagger2();
                     }
                 }
             });
