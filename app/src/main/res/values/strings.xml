@@ -115,4 +115,5 @@
     <string name="title_activity_palette">PaletteActivity</string>
     <string name="select_image">Select Image</string>
     <string name="title_activity_palette_result">PaletteResultActivity</string>
+    <string name="chosen_image">Chosen Image</string>
 </resources>

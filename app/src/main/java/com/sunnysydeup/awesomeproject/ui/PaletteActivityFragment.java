@@ -28,7 +28,7 @@ public class PaletteActivityFragment extends Fragment {
         if (requestCode == SELECT_PHOTO && resultCode == Activity.RESULT_OK) {
             Uri uri = data.getData();
             Intent intent = new Intent(getActivity(), PaletteResultActivity.class);
-            intent.putExtra("image", uri);
+            intent.putExtra(PaletteResultActivity.EXTRA_BITMAP, uri);
             startActivity(intent);
         }
     }

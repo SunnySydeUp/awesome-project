@@ -2,9 +2,12 @@ package com.sunnysydeup.awesomeproject.ui;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.sunnysydeup.awesomeproject.R;
 import com.sunnysydeup.awesomeproject.models.PaletteData;
@@ -13,6 +16,9 @@ import com.sunnysydeup.awesomeproject.views.PaletteView;
 
 public class PaletteResultActivity extends AppCompatActivity implements PaletteView {
 
+    public static final String EXTRA_BITMAP = "IMAGE";
+    private CollapsingToolbarLayout collapsingToolbar;
+    private ImageView imageView;
     private View loadingFrame;
     private PalettePresenter presenter;
 
@@ -26,11 +32,13 @@ public class PaletteResultActivity extends AppCompatActivity implements PaletteV
 
         presenter = new PalettePresenter(this);
 
-        Bundle data = getIntent().getExtras();
-        Uri byteArray = data.getParcelable("image");
-        presenter.getData(this, byteArray);
-
         loadingFrame = findViewById(R.id.loading_frame);
+        collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
+        imageView = (ImageView) findViewById(R.id.image);
+
+        Bundle data = getIntent().getExtras();
+        Uri byteArray = data.getParcelable(EXTRA_BITMAP);
+        presenter.getData(this, byteArray);
     }
 
     @Override
@@ -42,5 +50,13 @@ public class PaletteResultActivity extends AppCompatActivity implements PaletteV
     @Override
     public void paletteDataReady(PaletteData paletteData) {
         loadingFrame.setVisibility(View.GONE);
+        updateToolbar(paletteData);
+    }
+
+    private void updateToolbar(PaletteData paletteData) {
+        imageView.setImageBitmap(paletteData.bitmap);
+        collapsingToolbar.setContentScrimColor(paletteData.palette.getMutedColor(ContextCompat.getColor(this, R.color.primary)));
+        collapsingToolbar.setStatusBarScrimColor(paletteData.palette.getDarkMutedColor(ContextCompat.getColor(this, R.color.primary_dark)));
+        collapsingToolbar.setExpandedTitleColor(ContextCompat.getColor(this, android.R.color.transparent));
     }
 }
