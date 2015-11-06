@@ -52,6 +52,11 @@ public class MainActivityFragment extends Fragment {
         startActivity(intent);
     }
 
+    private void navigateToPalette() {
+        Intent intent = new Intent(getActivity(), PaletteActivity.class);
+        startActivity(intent);
+    }
+
     private void navigateToPermissions() {
         Intent intent = new Intent(getActivity(), PermissionsActivity.class);
         startActivity(intent);
@@ -167,8 +172,12 @@ public class MainActivityFragment extends Fragment {
                             break;
                         case 10:
                             navigateToAndroidLibrary();
+                            break;
                         case 11:
                             navigateToDagger2();
+                            break;
+                        case 12:
+                            navigateToPalette();
                     }
                 }
             });

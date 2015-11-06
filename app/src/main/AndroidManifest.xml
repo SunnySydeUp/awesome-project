@@ -115,6 +115,24 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.sunnysydeup.awesomeproject.ui.MainActivity" />
         </activity>
+        <activity
+            android:name=".ui.PaletteActivity"
+            android:label="@string/title_activity_palette"
+            android:parentActivityName=".ui.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sunnysydeup.awesomeproject.ui.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ui.PaletteResultActivity"
+            android:label="@string/title_activity_palette_result"
+            android:parentActivityName=".ui.PaletteActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sunnysydeup.awesomeproject.ui.PaletteActivity" />
+        </activity>
     </application>
 
 </manifest>
