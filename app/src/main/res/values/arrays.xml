@@ -14,5 +14,6 @@
         <item>Android Library</item>
         <item>Dagger 2</item>
         <item>Palette</item>
+        <item>Fingerprint</item>
     </string-array>
 </resources>

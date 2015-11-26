@@ -42,6 +42,11 @@ public class MainActivityFragment extends Fragment {
         startActivity(intent);
     }
 
+    private void navigateToFingerprint() {
+        Intent intent = new Intent(getActivity(), FingerprintActivity.class);
+        startActivity(intent);
+    }
+
     private void navigateToMVP() {
         Intent intent = new Intent(getActivity(), MVPActivity.class);
         startActivity(intent);
@@ -178,6 +183,10 @@ public class MainActivityFragment extends Fragment {
                             break;
                         case 12:
                             navigateToPalette();
+                            break;
+                        case 13:
+                            navigateToFingerprint();
+                            break;
                     }
                 }
             });

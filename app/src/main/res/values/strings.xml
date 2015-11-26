@@ -116,4 +116,8 @@
     <string name="select_image">Select Image</string>
     <string name="title_activity_palette_result">PaletteResultActivity</string>
     <string name="chosen_image">Chosen Image</string>
+    <string name="title_activity_fingerprint">FingerprintActivity</string>
+    <string name="unauthenticated">Unauthenticated</string>
+    <string name="authenticated">Authenticated</string>
+    <string name="authenticate">Authenticate</string>
 </resources>
