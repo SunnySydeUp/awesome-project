@@ -1,56 +1,72 @@
 package com.sunnysydeup.awesomeproject.ui;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
+import android.widget.Toast;
 
 import com.sunnysydeup.awesomeproject.R;
 
-public class PermissionsActivityFragment extends Fragment {
-    private static final int REQUEST_CODE_INTERNET = 0;
-    private WebView webView;
+public class PermissionsActivityFragment extends Fragment implements AlertDialog.OnClickListener {
+    public static final int REQUEST_CONTACT_PERMISSION_CODE = 1;
 
     public PermissionsActivityFragment() {
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        webView = (WebView) view.findViewById(R.id.web_permissions);
+    public void onClick(DialogInterface dialog, int which) {
+        ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.READ_CONTACTS}, REQUEST_CONTACT_PERMISSION_CODE);
     }
 
     @Override
     public void onResume() {
         super.onResume();
+        askPermission();
+    }
+
+    private void askPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.INTERNET) != PackageManager.PERMISSION_GRANTED) {
-                // request missing internet connection
-                ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.INTERNET}, REQUEST_CODE_INTERNET);
-            } else {
-                // permission granted
-                loadUrl();
+            int hasReadPermission = ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.READ_CONTACTS);
+            if (hasReadPermission != PackageManager.PERMISSION_GRANTED) {
+                if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), Manifest.permission.READ_CONTACTS)) {
+                    new AlertDialog.Builder(getActivity())
+                            .setMessage("Need read contacts")
+                            .setPositiveButton("OK", this)
+                            .setNegativeButton("Cancel", null)
+                            .create()
+                            .show();
+                    return;
+                }
+                ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.READ_CONTACTS}, REQUEST_CONTACT_PERMISSION_CODE);
+                return;
             }
-        } else {
-            loadUrl();
         }
+        readContacts();
+    }
+
+    private void readContacts() {
+        Toast.makeText(getActivity(), "Read Contacts", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        if (requestCode == REQUEST_CODE_INTERNET && grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            loadUrl();
+        switch (requestCode) {
+            case REQUEST_CONTACT_PERMISSION_CODE:
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Toast.makeText(getActivity(), "Permission Granted", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            default:
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
-    }
-
-    private void loadUrl() {
-        webView.loadUrl("http://www.google.com.au");
     }
 
     @Override
